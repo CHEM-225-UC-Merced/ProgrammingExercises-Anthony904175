@@ -25,7 +25,7 @@
         goto 999
       endIf
       do i = 1,3
-        read(inFileUnitA,*) matrixInA(1,i),matrixInA(2,i),matrixInA(3,i)
+            read(inFileUnitA,*) matrixInA(1,i),matrixInA(2,i),matrixInA(3,i)
       endDo
       close(inFileUnitA)
 !
@@ -51,10 +51,13 @@
 !
 !     Do the printing job.
 !
-      write(*,*)' Printing Matrix'
-!
-      ADD CODE HERE
-!
+      write(*, *)' Printing Matrix'
+
+      
+      do i = 1, 3
+            write(*, 1000) matrix(i , :)
+      endDo
+!     
 !
       return
       End Subroutine PrintMatrix3x3
